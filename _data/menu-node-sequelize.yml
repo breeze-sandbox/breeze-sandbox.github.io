@@ -1,0 +1,5 @@
+title: Node server w/ Sequelize
+shorttitle: Node/Sequelize
+menuitems:
+  - { link: "introduction.html", title: introduction }
+  - { link: "class-descriptions.html", title: API documentation }

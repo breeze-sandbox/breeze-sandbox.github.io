@@ -1,0 +1,72 @@
+{% assign pagelink = page.url | split: '/' | last  %}
+{% if pagelink == "index.html" %}
+{% assign header-active = "active" %}
+{% endif %}
+<div id="leftnav" class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm">
+    <a id="menu-header" class="navmenu-brand {{header-active}}" href="/{{page.layout}}/">{{menu.title}}</a>
+	<ul id="menu-top" class="nav navmenu-nav">
+<!-- find parent menu if current page is a child menu - call it expandeditem
+     capture 'tmp' is too suppress extra lf in html   -->
+{% capture tmp %}
+    {% assign parent = null %}
+    {% assign expandeditem = null %}
+    {% for menuitem in menu.menuitems %}
+        {% if menuitem.isparent %}
+           {% assign parent = menuitem %}
+        {% elsif menuitem.ischild == null %}
+           {% assign parent = null %}
+        {% endif %}
+        {% if parent != null and pagelink == menuitem.link %}
+           {% assign expandeditem = parent %}
+        {% endif %}
+    {% endfor %}
+{% endcapture %}{% assign tmp = nil %}
+                      
+{% assign indropdown = false %}                  
+{% for menuitem in menu.menuitems %}
+    {% if pagelink == menuitem.link %}
+        {% assign possible-active = "active" %}
+    {% else %}
+        {% assign possible-active = "" %}
+    {% endif %}
+    {% if menuitem.isparent %}
+        {% if indropdown == true %}
+            {% assign indropdown = false %}
+                </ul>
+            </div>
+        </li>
+        {% endif %}
+        <li class="dropdown keep-open {{possible-active}}" >
+        {% if expandeditem == menuitem %}
+            <div class="btn-group open">
+        {% else %}
+            <div class="btn-group">
+        {% endif %}                                
+                <a href="{{menuitem.link}}">{{menuitem.title}}</a>
+                <button class="button dropdown-toggle" data-toggle="dropdown">                     
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>             
+			    <ul class="dropdown-menu navmenu-nav">
+        {% assign indropdown = true %}
+    {% elsif indropdown == true and menuitem.ischild == null %}
+        {% assign indropdown = false %}
+                </ul>
+            </div>
+        </li>
+    {% endif %}
+    {% if menuitem.isparent == null %} 
+    <li class="{{possible-active}}">
+        <a href="{{menuitem.link}}">{{menuitem.title}}</a>
+    </li>
+    {% endif %}
+{% endfor %}
+
+{% if indropdown == true %}
+                </ul>
+            </div>
+        </li>
+{% endif %}
+
+	</ul>
+</div>

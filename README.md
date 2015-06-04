@@ -1,2 +1,2 @@
-# breeze-sandbox.github.io
-Sandbox area for breeze.github.io documentation site
+# breeze.github.io
+Breeze Documentation Site
