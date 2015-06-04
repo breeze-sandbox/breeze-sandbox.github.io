@@ -12,7 +12,7 @@ The *HibernateQueryProcessor* constructor takes *Metadata* object created as a r
 
 The HibernateQueryProcessor typically builds Criteria queries from jsonified *EntityQuery* instances.  Each query also needs the Class on which the query operates.  Example:
 
-
+```java
     // metadata is the metadata for the hibernate model being queried
     // sessionFactory is a Hibernate SessionFactory
     QueryProcessor qp = new HibernateQueryProcessor(metadata, sessionFactory);
@@ -24,23 +24,23 @@ The HibernateQueryProcessor typically builds Criteria queries from jsonified *En
     QueryResult qr = qp.executeQuery(Customer.class, json);
     Collection results = qr.getResults();
     String jsonResults = qr.toJson();
-
+```
 	
 Behind the scenes, that json string is parsed into an *EntityQuery* object, which is then converted into a Criteria query, which is then executed.  In a Java servelet app, the *QueryResult* object can be converted to json via a 'toJson' call and returned from the HTTP request to the breeze client.
 
 Alternatively the server side breeze EntityQuery can be constructed via the EntityQuery construction api. The construction api provides a more structured, strongly typed alternative for creating a query.
 
-
-    // Customers with company names starting with 'A'
-    Predicate newPred = new BinaryPredicate(Operator.StartsWith,
-                "companyName", "A");
-    EntityQuery eq = new EntityQuery().where(newPred);
-    // an alternative to ...
-    // EntityQuery eq = new
-    // EntityQuery("{ companyName: { startsWith: 'A' }}");
-    QueryResult qr = executeQuery(Customer.class, eq);
-    String jsonResults = qr.toJson();        
-
+```java
+// Customers with company names starting with 'A'
+Predicate newPred = new BinaryPredicate(Operator.StartsWith,
+            "companyName", "A");
+EntityQuery eq = new EntityQuery().where(newPred);
+// an alternative to ...
+// EntityQuery eq = new
+// EntityQuery("{ companyName: { startsWith: 'A' }}");
+QueryResult qr = executeQuery(Customer.class, eq);
+String jsonResults = qr.toJson();        
+```
 
 ##### Combining client query with additional server query restrictions
 
