@@ -12,7 +12,7 @@ The *HibernateQueryProcessor* constructor takes *Metadata* object created as a r
 
 The HibernateQueryProcessor typically builds Criteria queries from jsonified *EntityQuery* instances.  Each query also needs the Class on which the query operates.  Example:
 
-~~~java
+~~~java linenos=table
     // metadata is the metadata for the hibernate model being queried
     // sessionFactory is a Hibernate SessionFactory
     QueryProcessor qp = new HibernateQueryProcessor(metadata, sessionFactory);
@@ -30,7 +30,7 @@ Behind the scenes, that json string is parsed into an *EntityQuery* object, whic
 
 Alternatively the server side breeze EntityQuery can be constructed via the EntityQuery construction api. The construction api provides a more structured, strongly typed alternative for creating a query.
 
-~~~java
+~~~java linenos
 // Customers with company names starting with 'A'
 Predicate newPred = new BinaryPredicate(Operator.StartsWith,
             "companyName", "A");
