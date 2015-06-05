@@ -118,9 +118,13 @@ table.highlighttable tr td {
     padding: 0;
 }
 div.linenodiv pre {
-    border-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right-style: dotted;
     color: #aaaaaa;
 }
 table.highlighttable div.highlight pre {
     border-left: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }
