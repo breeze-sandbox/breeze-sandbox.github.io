@@ -24,7 +24,7 @@ The HibernateQueryProcessor typically builds Criteria queries from jsonified *En
     QueryResult qr = qp.executeQuery(Customer.class, json);
     Collection results = qr.getResults();
     String jsonResults = qr.toJson();
-{% endhightlight %}
+{% endhighlight %}
 	
 Behind the scenes, that json string is parsed into an *EntityQuery* object, which is then converted into a Criteria query, which is then executed.  In a Java servelet app, the *QueryResult* object can be converted to json via a 'toJson' call and returned from the HTTP request to the breeze client.
 
