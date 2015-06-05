@@ -30,7 +30,7 @@ Behind the scenes, that json string is parsed into an *EntityQuery* object, whic
 
 Alternatively the server side breeze EntityQuery can be constructed via the EntityQuery construction api. The construction api provides a more structured, strongly typed alternative for creating a query.
 
-~~~java linenos
+~~~java
 // Customers with company names starting with 'A'
 Predicate newPred = new BinaryPredicate(Operator.StartsWith,
             "companyName", "A");
