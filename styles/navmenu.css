@@ -107,7 +107,9 @@ h4, .h4 {
 }
 
 #rss-blog-logo {
-    padding-bottom: 4px;
+    padding-top: 14px;
+    padding-bottom: 0;
+    margin: 0;
 }
 
 @media (min-width: 1px) {
