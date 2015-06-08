@@ -29,41 +29,19 @@ layout: doc-samples
 
 <p>Even better, through the use of proven architecture and design patterns, multiple developers can work independently on specific views, models, and workflows without impacting other modules.</p>
 
-<p><img src="/images/samples/temphire/temphire-angular.png" style="border-width: 0px; border-style: solid; width: 100%; max-width: 543px;" /></p>
+<p><img src="/images/samples/temphire/temphire-angular-sequelize.png" style="border-width: 0px; border-style: solid; width: 100%; max-width: 543px;" /></p>
 
 <h1>TempHire under the hood</h1>
 
 <p>So what exactly does an enterprise JavaScript app look like from the inside? TempHire is one way to do it&mdash;a way we&rsquo;ve had success with and are happy to share with you.</p>
 
-<p>TempHire is composed of a client side app (JavaScript, CSS, HTML, etc.), a domain model (entities, and business logic), and various server side components.</p>
+<p>TempHire is composed of a client side app (JavaScript, CSS, HTML, etc.), and various server side components.</p>
 
-<p><img src="/images/samples/temphire/solution-explorer.png" style="border-width: 0px; border-style: solid; width: 100%; max-width: 350px;" /></p>
-
-<h1>Domain model</h1>
-
-<p>The DomainModel is the main model for all of the application data. TempHire&rsquo;s domain model contains all of its entity classes, an entity base class, and a DbContext file. &nbsp;</p>
-
-<h2>Entity classes</h2>
-
-<p>Let&rsquo;s look at AddressType as an example of one of Temphire&rsquo;s entity classes. It&rsquo;s a Code First class that has four properties.</p>
-
-<p><img src="/images/samples/temphire/addresstype.png" style="border-width: 0px; border-style: solid; width: 100%; max-width: 479px;" /></p>
-
-<h2>EntityBase</h2>
-
-<p>TempHire uses a base class that all the entities, directly or indirectly, inherit from (EntityBase.cs). The nice thing about Code First is that TempHire can add common functionalities to the base class that will be applied to all of the entities in the domain model. Because these functions are in the base class, TempHire doesn&rsquo;t need to add them to derived classes. Everything is inheritable.</p>
-
-<p>You can see this in action by the way that TempHire handles concurrency checking. It&rsquo;s located in the base class and is inherited by every entity.&nbsp;</p>
-
-<p><img src="/images/samples/temphire/concurrencycheck.png" style="border-width: 0px; border-style: solid; width: 100%; max-width: 410px;" /></p>
-
-<h2>DbContext</h2>
-
-<p><strong>TempHireDbContext</strong> demonstrates how we map TempHire&rsquo;s domain model to a database using EntityFramework Code First. TempHire tells EF what its entitysets are, and sets a few initialization strategies (e.g. <em>dropcreatedatabaseifmodelchanges</em>). &nbsp;To be very clear, we&rsquo;ve built TempHire as a demo app ... and in this context, this makes sense. Don&rsquo;t drop your database in a production application!</p>
+<p><img src="/images/samples/temphire/solution-explorer-webstorm.png" style="border-width: 0px; border-style: solid; width: 100%; max-width: 250px;" /></p>
 
 <h2>Projections</h2>
 
-<p>Temphire uses projections and DTOs where applicable to improve performance and to move complex queries to the server, where implementing them in LINQ is a lot easier. You can see this in action on the master details screen:</p>
+<p>Temphire uses projections and DTOs where applicable to improve performance and to move complex queries to the server. You can see this in action on the master details screen:</p>
 
 <p><img src="/images/samples/temphire/mastergrid.png" style="border-width: 0px; border-style: solid; width: 100%; max-width: 640px;" /></p>
 
@@ -73,11 +51,9 @@ layout: doc-samples
 
 <h1>TempHire app</h1>
 
-<p>With the domain model behind us, let&rsquo;s take a look inside the app itself.</p>
-
 <h2>App</h2>
 
-<p>The App folder contains the core components of the TempHire client: Angular, Client Services, ViewModel code, the HTML Views, and main.js, the script that bundles the app&rsquo;s scripts into a single package.</p>
+<p>The <em>client</em> folder contains the core components of the TempHire client: Angular, Client Services, ViewModel code, the HTML Views, and main.js, the script that bundles the app&rsquo;s scripts into a single package.</p>
 
 <p>We&rsquo;re assuming you&rsquo;re familiar with the basics, so the most interesting components here are likely App/Angular and App/ Services.</p>
 
@@ -91,13 +67,9 @@ layout: doc-samples
 
 <p>Entitymangerprovider.js offers a CreateManager method for TempHire to call whenever it needs a new EntityManager instance&mdash;something it does frequently as each UOW must spin up a new EntityManager. Logger.js takes care of TempHire&rsquo;s logging functions, Repository.js is responsible for the configuration of UOW Repositories, and Unitofwork.js is responsible for the configuration of the UOW themselves.</p>
 
-<h2>App_Start</h2>
-
-<p>App_Start contains BreezeWebApiConfig.cs, BundleConfig.cs, and InfrastructureConfig.cs. &nbsp;These files run at the beginning of the server launch sequence and register their applicable routes. BreezeWebApiConfig routes Breeze client requests to the Breeze controller, and InfrastructureConfig registers the resource bundles via the BundleConfig helper class. Additional infrastructure configuration can be added here later.</p>
-
 <h2>Content</h2>
 
-<p>All of TempHire&rsquo;s content files (CSS and images) are stored in the appropriately named Content folder.&nbsp; This is a good time to mention that TempHire uses <a href="http://twitter.github.io/bootstrap/">Twitter Bootstrap</a>, an excellent template for quickly standing up a modern front-end.&nbsp;</p>
+<p>All of TempHire&rsquo;s content files (CSS and images) are stored in the <em>client/css</em> folder.&nbsp; This is a good time to mention that TempHire uses <a href="http://twitter.github.io/bootstrap/">Twitter Bootstrap</a>, an excellent template for quickly standing up a modern front-end.&nbsp;</p>
 
 <p>HTML, CSS, UI elements, responsivity&mdash;yeah, Bootstrap takes care of all of that.</p>
 
