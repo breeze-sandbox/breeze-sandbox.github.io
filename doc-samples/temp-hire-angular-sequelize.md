@@ -31,6 +31,24 @@ layout: doc-samples
 
 <p><img src="/images/samples/temphire/temphire-angular-sequelize.png" style="border-width: 0px; border-style: solid; width: 100%; max-width: 543px;" /></p>
 
+# Download
+
+Download [ALL of the Breeze JavaScript samples from github](https://github.com/Breeze/breeze.js.samples "breeze.js.samples on github") as [a zip file](https://github.com/Breeze/breeze.js.samples/archive/master.zip "breeze.js.samples zip file").
+
+In this case we're interested in the "tempHire" sample, located in the *node/tempHire* directory. These instructions assume this will be your current working directory.
+
+At the top level you will find:
+
+* a <a href="https://github.com/Breeze/breeze.js.samples/blob/master/node/tempHire/readme.md" target="_blank" title="readme.md on github"><strong>readme.md</strong></a> explaining how to install and run the app
+* the **db-script** folder
+* the **client** folder full of client application **HTML, CSS, and JavaScript**
+* the **server** folder containing the node/express server application JavaScript.
+
+You can view, edit, and run the code in this project using the tools of your choice.
+
+<p class="note">The sample assumes that you've installed <strong>node.js</strong> and <a href="http://www.mysql.com"
+  target="_blank"><strong>MySql</strong></a></p>
+
 <h1>TempHire under the hood</h1>
 
 <p>So what exactly does an enterprise JavaScript app look like from the inside? TempHire is one way to do it&mdash;a way we&rsquo;ve had success with and are happy to share with you.</p>
