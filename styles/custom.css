@@ -139,6 +139,7 @@ table.highlighttable div.highlight pre {
     color:#eeeeee;
     background-color: #1c252c;
     text-align: center;
+    font-size: small;
 }
 #content-footer div {
     margin:auto;
