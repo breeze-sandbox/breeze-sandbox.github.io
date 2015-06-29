@@ -21,7 +21,7 @@ In this case we're interested in the "Todo-Angular" sample, located in the *node
 
 At the top level you will find:
 
-* a <a href="https://github.com/Breeze/breeze.js.samples/blob/feature/todo-angular-node-postgres/node/todo-angular/readme.md" target="_blank" title="readme.md on github"><strong>readme.md</strong></a> explaining how to install and run the app
+* a <a href="https://github.com/Breeze/breeze.js.samples/tree/master/node/todo-angular" target="_blank" title="readme.md on github"><strong>readme.md</strong></a> explaining how to install and run the app
 * the **db-script** folder
 * the **client** folder full of client application **HTML, CSS, and JavaScript**
 * the **server** folder containing the node/express server application JavaScript.
