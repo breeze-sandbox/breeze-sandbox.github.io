@@ -1,1 +1,15 @@
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+   input: GFM
+   hard_wrap: false
+
 url: http://breeze-sandbox.github.io
+
+encoding: utf-8
+gems:
+  - jekyll-redirect-from
+  - jekyll-sitemap
+
+
