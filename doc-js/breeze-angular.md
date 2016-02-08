@@ -13,7 +13,6 @@ The **Breeze Angular Service** is a Breeze "bridge" adapter that performs this c
 
 ##Install it
 
-
 1. acquire the ***breeze.bridge.angular.js*** JavaScript file in one of the ways described below
 	
 	> This *breeze.bridge.angular.js* used to be a Breeze Labs file named *breeze.angular.js*. It was moved to Breeze core and renamed in January, 2015.
