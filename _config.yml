@@ -1,10 +1,12 @@
-markdown: redcarpet
-highlighter: pygments
+markdown: kramdown
+highlighter: rouge
 
-redcarpet:
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
   extensions: ['tables', 'autolink', 'no_intra_emphasis', 'with_toc_data', 'strikethrough']
 
-url: http://breeze.github.io
+url: http://breeze-sandbox.github.io
 
 encoding: utf-8
 gems:
