@@ -4,7 +4,6 @@ highlighter: rouge
 kramdown:
   input: GFM
   syntax_highlighter: rouge
-  extensions: ['tables', 'autolink', 'no_intra_emphasis', 'with_toc_data', 'strikethrough']
 
 url: http://breeze-sandbox.github.io
 
