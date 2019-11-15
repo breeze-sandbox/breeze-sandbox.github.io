@@ -8,7 +8,7 @@
 html {
   font-family: Muli,"Helvetica Neue",Arial,sans-serif;
 }
-body, .dark {
+body, .dark  {
   background-color: #1c252c;
   color: white;
 }
@@ -19,8 +19,26 @@ nav ul a {
 nav ul a:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
+nav .brand-logo {
+  white-space: nowrap;
+}
 nav .brand-logo img {
   vertical-align: middle;
+}
+nav .sidenav-trigger {
+  color: #26a69a;
+  margin-left: 0px;
+}
+.sidenav {
+  top: 56px;
+}
+.dark .sidenav li > a {
+  color:#ffdd99;
+  background-color: #1c252c;;
+}
+#index-banner h1 img {
+  width: 85%;
+  max-width: 600px;
 }
 
 .page-footer .footer-copyright {
@@ -29,10 +47,6 @@ nav .brand-logo img {
 
 p {
   line-height: 2rem;
-}
-
-.sidenav-trigger {
-  color: #26a69a;
 }
 
 .parallax-container {
