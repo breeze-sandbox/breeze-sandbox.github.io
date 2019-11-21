@@ -56,6 +56,10 @@ nav .sidenav-trigger {
 p {
   line-height: 2rem;
 }
+.bigbold {
+  font-weight: bold;
+  font-size: 18pt;
+}
 
 .parallax-container {
   min-height: 380px;
