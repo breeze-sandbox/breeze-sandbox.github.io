@@ -7,7 +7,7 @@ Currently work-in-progress prototype for future home page.
 ## Structure Notes
 
 As it stands, the code for header and footer are repeated on every page.  We can remove this by
-using jekyll to build the site from templates, but that makes it more difficult to run the site
+using Jekyll to build the site from templates, but that makes it more difficult to run the site
 locally.
 
 ## Content Notes
@@ -15,6 +15,12 @@ locally.
 Do we have **too many** social media links?  Which ones should we cut out?
 
 How much bio information should we have in the About Us page?  Can we zoom out the headshots somehow?
+
+### Contact Form
+
+The form on the [./contact.html](contact page) submits to a Google form, where the responses are consolidated on a [Google sheet](https://docs.google.com/spreadsheets/d/19amZBoc4XAcV-_u86FdOOXvCt6n0bSYNChyV3rL6a3c/edit#gid=541841991).
+
+We can consider using [Formspree](https://formspree.io/) instead.
 
 ## What we are missing
 

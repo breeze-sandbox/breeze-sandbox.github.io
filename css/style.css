@@ -36,6 +36,9 @@ nav .sidenav-trigger {
   color:#ffdd99;
   background-color: #1c252c;;
 }
+input, textarea {
+  color: white;
+}
 #index-banner h1 img {
   width: 85%;
   max-width: 600px;
@@ -96,4 +99,12 @@ p {
 
 footer.page-footer {
   margin: 0;
+}
+
+.opa0 {
+  opacity: 0;
+}
+.fadeIn {
+  opacity: 1;
+  transition: opacity 2000ms;
 }

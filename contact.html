@@ -48,9 +48,44 @@
     <div class="parallax"><img src="img/bay_bridge.jpg" alt="Bay Bridge"></div>
   </div>
 
-
   <div class="container">
-    <h5>We'd like to work with you.  Please call us right away for a free consultation about your software project.</h5>
+    <h5>Free Consultation</h5>
+    <p>We can be the key to your next successful project. Application development, business analysis, project management, architecture review &mdash; whatever your needs may be &mdash; our professional services team is ready to work with you.</p>
+
+    <p>Let us know how we can contact you to schedule your free consultation.</p>
+
+    <script type="text/javascript">
+    function gformSubmit() {
+      // var btn = document.getElementById("submitbutton");
+      // btn.style.display = "none";
+      var thank = document.getElementById("thankyou");
+      thank.classList.add("fadeIn");
+      thank.classList.remove("opa0");
+    }
+    </script>
+  
+    <form name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLSfaFCvhDg75CMQpx0SR6zirtmmLzBi1nT5-w1UhVLXfPfqGyQ/formResponse?" onsubmit="gformSubmit();" target="hidden_iframe">
+      First name:<br>
+      <input type="text" name="entry.58570725" id="entry.58570725"><br>
+      Last name:<br>
+      <input type="text" name="entry.625214398" id="entry.625214398">
+      Email:<br>
+      <input type="email" name="entry.275863267" id="entry.275863267">
+      Phone:<br>
+      <input type="tel" name="entry.2030336720" id="entry.2030336720">
+      Commment:<br>
+      <textarea name="entry.618295846" id="entry.618295846"></textarea>
+      <button class="btn waves-effect waves-light blue lighten-3" type="submit" name="action" id="submitbutton">Send
+        <i class="material-icons right">send</i>
+      </button>        
+      <i id="thankyou" class="opa0">Thank you for your interest.  We will get in touch with you soon.</i>
+    </form>
+
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+  </div>
+  <br>
+  <div class="container">
+    <h5>We'd like to work with you.  Here's how to reach us.</h5>
 
     <p>IdeaBlade is located at:</p>
 
@@ -61,8 +96,6 @@
     <p>fax: <a href="tel:+1-510-450-0379">510-450-0379</a></p>
 
     <p><a href="http://ideablade.com/">www.ideablade.com</a></p>
-
-
 
     <p>For information please contact us at <a href="mailto:info@ideablade.com">info@ideablade.com</a></p>
 
